@@ -1,7 +1,7 @@
 <?php
 
 namespace Pessoa;
-
+use Zend\ServiceManager\Factory\InvokableFactory;
 return [
     'router' => [
         'routes' => [
@@ -21,12 +21,16 @@ return [
             ],
         ],
     ],
-
+    'controllers' => [
+        'factories' => [
+            Controller\PessoaController::class => InvokableFactory::class,
+        ]
+    ],
     'view_manager' => [
         'template_path_stack' => [
             'pessoa' => __DIR__.'/../view',
         ],
-    ],
+    ]
 ];
 //  /pessoa/listar/todos exemplo de rota para este router
 // /pessoa/editar/1 
