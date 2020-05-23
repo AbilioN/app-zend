@@ -22,7 +22,7 @@
         }
 
         public function removerAction(){
-
+            return new ViewModel();
         }
         public function confirmacaoAction(){
 
